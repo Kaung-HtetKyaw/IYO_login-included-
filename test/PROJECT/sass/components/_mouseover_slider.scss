@@ -1,0 +1,92 @@
+.mouseover {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    .layer {
+        width: 100vw;
+        height: 100%;
+        position: absolute;
+    }
+    .content-wrap {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .content-body {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .welcome {
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        z-index: 5;
+        transform: rotate(-90deg);
+        color: #eee;
+        font-size: 2rem;
+        font-weight: normal;
+        &__text {
+            letter-spacing: 1px;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: -200%;
+                width: 500%;
+                height: 1px;
+                background-color: #eee;
+            }
+        }
+    }
+    .quote {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: 900;
+        z-index: 5;
+        pointer-events: none;
+        font-size: 2rem;
+        color: #fff;
+        font-family: $serif;
+        .youth {
+            transform: rotate(90deg) translate(25%, -130%);
+        }
+    }
+    .top {
+        top: 10vh;
+        bottom: 10vh;
+        left: 5vh;
+        width: 50vw;
+        height: 80vh;
+        z-index: 4;
+        .content-wrap {
+            .content-body {
+                background-color: #6497b1;
+            }
+        }
+    }
+    .bottom {
+        top: 0;
+        left: 0;
+        z-index: 3;
+        background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(../../img/hero3.jpg);
+        .content-body {
+            padding: 0 5rem;
+        }
+    }
+    .handle {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+        width: 5px;
+        display: block;
+        background-color: transparent;
+        z-index: 6;
+    }
+}

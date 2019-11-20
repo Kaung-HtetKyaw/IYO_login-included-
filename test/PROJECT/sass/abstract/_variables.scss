@@ -1,0 +1,16 @@
+//Breakpoints
+$grid__bp-xs: 0;
+$grid__bp-sm: 576;
+$grid__bp-md: 768;
+$grid__bp-lg: 992;
+$grid__bp-xl: 1200;
+$map-grid-props: ( "-xs": $grid__bp-xs, "-sm": $grid__bp-sm, "-md": $grid__bp-md, "-lg": $grid__bp-lg, "-xl": $grid__bp-xl);
+//Grid
+$gap-horizontal: 4rem;
+//Fonts
+$sans_serif: "Poppins",
+sans-serif;
+$script: "Oleo Script",
+cursive;
+$serif: "Source Serif Pro",
+serif;

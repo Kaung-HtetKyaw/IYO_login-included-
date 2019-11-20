@@ -1,0 +1,82 @@
+#post--wrapper {
+    width: 100%;
+    padding: 10rem 0;
+    background-color: var(--post);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.1s ease-in-out;
+}
+
+.posts {
+    position: relative;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5rem;
+    transition: all 0.1s ease-in-out;
+    @include mq-sm {
+        padding: 1rem;
+    }
+    margin: 3rem auto;
+    &:nth-child(even) {
+        background-color: var(--post--even) !important;
+    }
+}
+
+.post--control {
+    top: 2%;
+    right: 1%;
+    width: 100px;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    .icon {
+        width: 20px;
+        float: left;
+        padding: 0.2rem;
+    }
+}
+
+.post__link {
+    display: block;
+    width: 100%;
+}
+
+.post--body {
+    width: 100%;
+    font-family: $sans-serif;
+}
+
+.post--img {
+    background: url(../../img/hero3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100px;
+}
+
+.post--content {
+    padding: 2rem;
+}
+
+.post__heading {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--post--heading);
+}
+
+.post__desp {
+    font-size: 1.3rem;
+    line-height: 2;
+    font-weight: lighter;
+    color: var(--post--content);
+}
+
+.post__speaker {
+    color: var(--post--heading);
+    font-weight: 500;
+}

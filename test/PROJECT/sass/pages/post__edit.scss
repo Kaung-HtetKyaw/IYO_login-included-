@@ -1,0 +1,87 @@
+@import "../abstract/variables";
+@import "../abstract/mixins";
+@import "../base/normalize";
+@import "../layout/responsive";
+@import "../base/utilities";
+@import "../base/base";
+@import "../components/navigation";
+@import "../components/toggler";
+@import "../components/cursor";
+@import "../components/posts";
+//#011f4b • #03396c • #005b96 • #6497b1 • #b3cde0
+body {
+    --header: transparent;
+    --header-tx-c: white;
+    --header-bg-c: transparent;
+    font-family: $sans-serif;
+    font-size: 2rem;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    header {
+        background-color: var(--nav-bg);
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+        .logo {
+            color: var(--nav-tx);
+        }
+        .hamburger {
+            .bars,
+            .bars::before,
+            .bars::after {
+                background-color: var(--nav-tx);
+            }
+        }
+    }
+}
+
+.light {
+    --about-bg: #fafafa;
+    --nav-bg: #fafafa;
+    --nav-tx: #121212;
+    --h-bg: #eee;
+    --h-tx: #333;
+    --tooltips: #000;
+    --add: #eee;
+    --post: #fff;
+    --form--border: rgba(51, 51, 51, 0.562);
+    --form--placeholder: #333;
+    --post--heading: #121212;
+    --post--body: #fafafa;
+    --post--content: #808080;
+    --post--even: #eee;
+}
+
+.dark {
+    --about-bg: #121212;
+    --nav-bg: #242424;
+    --nav-tx: #fff;
+    --h-bg: #242424;
+    --h-tx: #eee;
+    --tooltips: #eee;
+    --add: #333;
+    --post: #282828;
+    --form--border: rgb(187, 184, 184);
+    --form--placeholder: #fafafa;
+    --post--heading: #fff;
+    --post--body: #222;
+    --post--content: #eee;
+    --post--even: #333;
+}
+
+.heading {
+    position: relative;
+    display: inline-block;
+    color: var(--post--heading);
+    font-size: 2rem;
+    padding: 1rem 0;
+    margin-bottom: 3rem;
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        transform: scaleX(0.5);
+        background-color: var(--post--heading);
+    }
+}

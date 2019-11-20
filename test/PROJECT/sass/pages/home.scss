@@ -1,0 +1,139 @@
+@import "../abstract/variables";
+@import "../abstract/mixins";
+@import "../abstract/slick";
+@import "../base/normalize";
+@import "../layout/responsive";
+@import "../base/utilities";
+@import "../base/base";
+@import "../components/navigation";
+@import "../components/mouseover_slider";
+@import "../components/preload";
+@import "../components/toggler";
+@import "../components/cursor";
+@import "../components/content-slider";
+//#011f4b • #03396c • #005b96 • #6497b1 • #b3cde0
+body {
+    --header: transparent;
+    --header-tx-c: white;
+    --header-bg-c: transparent;
+    font-family: $sans-serif;
+    font-size: 2rem;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+.light {
+    --about-bg: #fafafa;
+    --nav-bg: #eee;
+    --nav-tx: #121212;
+    --h-bg: #eee;
+    --h-tx: #333;
+    --tooltips: #000;
+}
+
+.dark {
+    --about-bg: #121212;
+    --nav-bg: #242424;
+    --nav-tx: #fff;
+    --h-bg: #242424;
+    --h-tx: #eee;
+    --tooltips: #eee;
+}
+
+//#011f4b • #03396c • #005b96 • #6497b1 • #b3cde0
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: #6497b1;
+}
+
+.about {
+    width: 100%;
+    background-color: var(--about-bg);
+    transition: all 0.3s ease-in-out;
+    &__wrapper {
+        width: 100%;
+        height: 100%;
+        padding-top: 6rem;
+    }
+    &__body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__image {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../img/hero4.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        @include mq-md {
+            height: 50%;
+        }
+    }
+    &__content {
+        line-height: 1.8;
+        margin-left: -50px;
+        color: var(--nav-tx);
+        transition: all 0.1s ease-in-out;
+        @include mq-md {
+            text-align: center;
+            margin-left: 0;
+        }
+    }
+    &__heading {
+        &--secondary {
+            margin: 0 auto;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #6497b1, white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        &--primary {
+            margin: 0;
+            font-family: $serif;
+            font-size: 5rem;
+        }
+    }
+    &__para {
+        padding: 5rem;
+        background-color: var(--about-bg);
+        transition: all 0.5s ease-in-out;
+        p {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.teams {
+    width: 100%;
+    background-color: dodgerblue;
+}
+
+.footer {
+    width: 100%;
+}
+
+.is-froze {
+    pointer-events: none;
+}
+
+//NavTooltips active
+#fp-nav {
+    transition: all 0.5s;
+}
+
+#fp-nav.is-active {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+}
+
+#fp-nav ul li a span {
+    background: var(--tooltips) !important;
+}
+
+//shit

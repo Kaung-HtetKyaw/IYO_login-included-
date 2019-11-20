@@ -1,0 +1,61 @@
+//Text align Center
+.t-center {
+    text-align: center;
+}
+
+.t-right {
+    text-align: right;
+}
+
+.t-left {
+    text-align: left;
+}
+
+//Heading
+.heading--tertiary {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.heading--fourth {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+//Margin Bottom for Heading
+.m-b--sm {
+    margin-bottom: 2rem;
+}
+
+.m-b-md {
+    margin-bottom: 5rem;
+}
+
+//Padding
+.px--sm {
+    padding: 0 2rem;
+}
+
+//Absolute Center
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//Active Nav Link
+.nav-active {
+    color: #111;
+    font-weight: 700;
+}
+
+.cap {
+    font-size: 8rem;
+    font-family: $sans-serif;
+}
+
+//Responsive image
+.img--resp {
+    max-width: 100%;
+}
