@@ -8,7 +8,7 @@
 }
 
 .main.is-active {
-    transform: translateX(-50%);
+    transform: translateX(-40%);
     @include mq-sm {
         transform: translateX(-70%);
     }
@@ -34,6 +34,9 @@ nav {
         padding-bottom: 1rem;
         position: relative;
         transition: all 0.2s ease-in-out;
+        &:hover {
+            color: #6497b1;
+        }
     }
 }
 

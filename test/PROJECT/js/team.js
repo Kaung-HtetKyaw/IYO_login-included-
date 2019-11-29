@@ -1,53 +1,3 @@
-//LazyLoading
-const images = document.querySelectorAll("[data-style]");
-const posts = document.querySelectorAll(".posts");
-const Options = {
-    root: null,
-    threshold: 0,
-    rootMargin: "0px 0px 100px 0px"
-};
-
-function preload(el) {
-    const src = el.getAttribute("data-style");
-
-    if (!src) {
-        return;
-    } else {
-        el.style = src;
-    }
-}
-const ImgOberserver = new IntersectionObserver((entries, ImgOberserver) => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            return;
-        } else {
-            preload(entry.target);
-            ImgOberserver.unobserve(entry.target);
-        }
-    });
-}, Options);
-
-images.forEach(image => {
-    ImgOberserver.observe(image);
-});
-
-const scrollOpt = {
-    rootMargin: "0px 0px -100px 0px"
-};
-const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            return;
-        } else {
-            entry.target.classList.add("post--scrolled");
-            appearOnScroll.unobserve(entry.target);
-        }
-    });
-}, scrollOpt);
-
-posts.forEach(post => {
-    appearOnScroll.observe(post);
-});
 //Hamburger Toggle
 const wrapper = document.querySelector(".main");
 const hamburger = document.querySelector(".nav-toggle");
@@ -55,6 +5,17 @@ const hamburger = document.querySelector(".nav-toggle");
 hamburger.addEventListener("click", () => {
     document.querySelector(".hamburger").classList.toggle("is-active");
     wrapper.classList.toggle("is-active");
+});
+
+//Dropdown
+
+const dropdown = document.querySelector(".dropdown");
+const arrow = document.querySelector(".arrow");
+const dropdown__list = document.querySelector(".dropdown--list");
+
+dropdown.addEventListener("click", () => {
+    arrow.classList.toggle("arrow--clicked");
+    dropdown__list.classList.toggle("dropdown--clicked");
 });
 
 //Dark Mode
@@ -96,16 +57,44 @@ darkModeToggle.addEventListener("click", () => {
         theme.textContent = "Dark Theme: Off";
     }
 });
-//Dropdown
 
-const dropdown = document.querySelector(".dropdown");
-const arrow = document.querySelector(".arrow");
-const dropdown__list = document.querySelector(".dropdown--list");
+//Smooth Scroll
 
-dropdown.addEventListener("click", () => {
-    arrow.classList.toggle("arrow--clicked");
-    dropdown__list.classList.toggle("dropdown--clicked");
-});
+/*function smoothScroll(target_element, duration) {
+    let target = document.querySelector(target_element);
+    let targetPosition = target.offsetTop;
+    console.log(targetPosition);
+    let startPosition = window.pageYOffset;
+    let distance = targetPosition - startPosition;
+    let startTime = null;
+
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        let timeElasped = currentTime - startTime;
+        let run = ease(timeElasped, startPosition, distance, duration);
+        window.scrollTo(0, run);
+
+        if (timeElasped < duration) {
+            window.requestAnimationFrame(animation);
+        }
+    }
+
+    function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return (c / 2) * t * t + b;
+        t--;
+        return (-c / 2) * (t * (t - 2) - 1) + b;
+    }
+    console.log(`${targetPosition} ${distance}`);
+    window.requestAnimationFrame(animation);
+}
+
+const shit = document.querySelector('.shit');
+console.log(shit);
+shit.addEventListener('click', () => {
+    smoothScroll('.footer', 1000);
+    console.log('clicked');
+}); */
 
 //Cursor
 const cursor = document.querySelector(".cursor");

@@ -1,49 +1,60 @@
 //Hamburger Toggle
-const wrapper = document.querySelector('.main');
-const hamburger = document.querySelector('.nav-toggle');
+const wrapper = document.querySelector(".main");
+const hamburger = document.querySelector(".nav-toggle");
 
-hamburger.addEventListener('click', () => {
-    document.querySelector('.hamburger').classList.toggle('is-active');
-    wrapper.classList.toggle('is-active');
+hamburger.addEventListener("click", () => {
+    document.querySelector(".hamburger").classList.toggle("is-active");
+    wrapper.classList.toggle("is-active");
+});
+
+//Dropdown
+
+const dropdown = document.querySelector(".dropdown");
+const arrow = document.querySelector(".arrow");
+const dropdown__list = document.querySelector(".dropdown--list");
+
+dropdown.addEventListener("click", () => {
+    arrow.classList.toggle("arrow--clicked");
+    dropdown__list.classList.toggle("dropdown--clicked");
 });
 
 //Dark Mode
 
-let darkMode = localStorage.getItem('darkMode');
-const darkModeToggle = document.querySelector('.darkmode');
-const darkModeButton = document.querySelector('.darkmode-toggler');
-const theme = document.querySelector('.item-text');
+let darkMode = localStorage.getItem("darkMode");
+const darkModeToggle = document.querySelector(".darkmode");
+const darkModeButton = document.querySelector(".darkmode-toggler");
+const theme = document.querySelector(".item-text");
 const enableDarkMode = () => {
-    document.body.classList.add('dark');
-    document.body.classList.remove('light');
-    darkModeToggle.classList.add('toggle-clicked');
-    localStorage.setItem('darkMode', 'enabled');
+    document.body.classList.add("dark");
+    document.body.classList.remove("light");
+    darkModeToggle.classList.add("toggle-clicked");
+    localStorage.setItem("darkMode", "enabled");
 };
 
 const disableDarkMode = () => {
-    document.body.classList.remove('dark');
-    document.body.classList.add('light');
-    darkModeToggle.classList.remove('toggle-clicked');
-    localStorage.setItem('darkMode', null);
+    document.body.classList.remove("dark");
+    document.body.classList.add("light");
+    darkModeToggle.classList.remove("toggle-clicked");
+    localStorage.setItem("darkMode", null);
 };
 
-if (darkMode === 'enabled') {
+if (darkMode === "enabled") {
     enableDarkMode();
-    theme.textContent = 'Dark Theme: On';
+    theme.textContent = "Dark Theme: On";
 } else {
-    document.body.classList.add('light');
-    theme.textContent = 'Dark Theme: Off';
+    document.body.classList.add("light");
+    theme.textContent = "Dark Theme: Off";
 }
 
-darkModeToggle.addEventListener('click', () => {
-    darkMode = localStorage.getItem('darkMode');
+darkModeToggle.addEventListener("click", () => {
+    darkMode = localStorage.getItem("darkMode");
 
-    if (darkMode != 'enabled') {
+    if (darkMode != "enabled") {
         enableDarkMode();
-        theme.textContent = 'Dark Theme: On';
+        theme.textContent = "Dark Theme: On";
     } else {
         disableDarkMode();
-        theme.textContent = 'Dark Theme: Off';
+        theme.textContent = "Dark Theme: Off";
     }
 });
 
@@ -86,39 +97,39 @@ shit.addEventListener('click', () => {
 }); */
 
 //Cursor
-const cursor = document.querySelector('.cursor');
+const cursor = document.querySelector(".cursor");
 
-document.addEventListener('mousemove', e => {
+document.addEventListener("mousemove", e => {
     cursor.setAttribute(
-        'style',
-        'top: ' + (e.pageY - 10) + 'px; left: ' + (e.pageX - 10) + 'px;'
+        "style",
+        "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;"
     );
 });
 
-document.addEventListener('click', () => {
-    cursor.classList.add('expand');
+document.addEventListener("click", () => {
+    cursor.classList.add("expand");
 
     setTimeout(() => {
-        cursor.classList.remove('expand');
+        cursor.classList.remove("expand");
     }, 500);
 });
 
 //Choose image
 
-const realFileBtn = document.querySelector('.choose-img');
-const customBtn = document.querySelector('.custom-button');
-const customTxt = document.querySelector('.custom-text');
+const realFileBtn = document.querySelector(".choose-img");
+const customBtn = document.querySelector(".custom-button");
+const customTxt = document.querySelector(".custom-text");
 
-customBtn.addEventListener('click', () => {
+customBtn.addEventListener("click", () => {
     realFileBtn.click();
 });
 
-realFileBtn.addEventListener('change', () => {
+realFileBtn.addEventListener("change", () => {
     if (realFileBtn.value) {
         customTxt.innerHTML = realFileBtn.value.match(
             /[\/\\]([\w\d\s\.\-\(\)]+)$/
         )[1];
     } else {
-        customTxt.innerHTML = 'No file chosen,yet.';
+        customTxt.innerHTML = "No file chosen,yet.";
     }
 });

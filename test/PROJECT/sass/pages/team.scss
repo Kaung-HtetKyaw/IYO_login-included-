@@ -8,6 +8,8 @@
 @import "../components/toggler";
 @import "../components/cursor";
 @import "../components/posts";
+@import "../components/team-card";
+@import "../components/btn-animate";
 @import "../components/preload";
 @import "../components/dropdown";
 //#011f4b • #03396c • #005b96 • #6497b1 • #b3cde0
@@ -19,7 +21,6 @@ body {
     font-size: 2rem;
     position: relative;
     transition: all 0.5s ease-in-out;
-    overflow-x: hidden;
     header {
         background-color: var(--nav-bg);
         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
@@ -39,7 +40,7 @@ body {
 
 .light {
     --about-bg: #fafafa;
-    --nav-bg: #fafafa;
+    --nav-bg: #eee;
     --nav-tx: #121212;
     --h-bg: #eee;
     --h-tx: #333;
@@ -52,6 +53,8 @@ body {
     --post--body: #fafafa;
     --post--content: #808080;
     --post--even: #eee;
+    --team-title: #121212;
+    --btn-view: #333;
 }
 
 .dark {
@@ -69,23 +72,43 @@ body {
     --post--body: #222;
     --post--content: #eee;
     --post--even: #333;
+    --team-title: #b3cde0;
+    --btn-view: #b3cde0;
 }
 
-.heading {
-    position: relative;
-    display: inline-block;
-    color: var(--post--heading);
-    font-size: 2rem;
-    padding: 1rem 0;
-    margin-bottom: 3rem;
-    &::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
+.main {
+    width: 100%;
+}
+
+.team {
+    width: 100%;
+    background-color: var(--about-bg);
+    padding: 5rem 0;
+    color: var(--nav-tx);
+    transition: all 0.3s ease-in-out;
+    &:nth-child(1) {
+        margin-top: 6rem;
+    }
+    .title--wrapper {
         width: 100%;
-        height: 3px;
-        transform: scaleX(0.5);
-        background-color: var(--post--heading);
+    }
+    &__title {
+        display: inline-block;
+        font-family: $serif;
+        position: relative;
+        color: var(--team-title);
+        padding-bottom: 1rem;
+        transition: all 0.3s ease-in-out;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--nav-tx);
+            transform: scaleX(0.5);
+            transform-origin: left;
+        }
     }
 }

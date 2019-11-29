@@ -28,6 +28,9 @@
 @mixin col-classes($modifier, $breakpoint, $grid-columns: 12) {
     @include media-query($breakpoint) {
         @for $i from 1 through $grid-columns {
+            .col-#{$i} {
+                flex-basis: (100/ ($grid-columns/$i)) * 1%;
+            }
             .col#{$modifier}-#{$i} {
                 flex-basis: (100/ ($grid-columns/$i)) * 1%;
             }

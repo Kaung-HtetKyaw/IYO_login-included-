@@ -12,10 +12,11 @@ form {
     }
     .input--text,
     textarea {
+        font-size: 1.5rem;
         position: relative;
         text-align: center;
         padding: 1rem;
-        color: var(--form--border);
+        color: var(--nav-tx);
         transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
         border-left: 1px solid var(--form--border);
         border-bottom: 1px solid var(--form--border);

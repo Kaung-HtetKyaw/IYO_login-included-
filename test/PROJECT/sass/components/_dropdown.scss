@@ -1,0 +1,31 @@
+.arrow {
+    width: 10px;
+    margin: 0 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown {
+    cursor: pointer;
+    margin-bottom: 0 !important;
+}
+
+.dropdown--list {
+    color: var(--nav-tx);
+    display: none;
+    margin: 1rem 0 0 1rem;
+    li {
+        padding: 1rem 0;
+    }
+    a:hover {
+        color: #b3cde0;
+    }
+}
+
+.arrow--clicked {
+    transform: rotate(-90deg);
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown--clicked {
+    display: block;
+}

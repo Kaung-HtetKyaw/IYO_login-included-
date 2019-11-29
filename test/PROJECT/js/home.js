@@ -5,7 +5,6 @@ window.addEventListener("load", () => {
     setTimeout(() => {
         preload.remove();
     }, 900);
-    console.log("loaded");
 });
 
 //Full Page js Initailizing
@@ -14,7 +13,51 @@ new fullpage("#wrapper", {
     navigation: true,
     scrollingSpeed: 1000,
     navigationTooltips: ["Welcome", "About Us", "Our Teams", "Contact Us"],
-    showActiveTooltip: false
+    showActiveTooltip: false,
+    onLeave: (origin, destination, direction) => {
+        const section = destination.item;
+
+        const tl = new TimelineMax({ delay: 0.5 });
+
+        if (destination.index === 1) {
+            const about = document.querySelector(".about--animate");
+            const t_about = document.querySelector(".title--about");
+            tl.fromTo(
+                t_about,
+                0.3, { y: "50", opacity: 0 }, { y: 0, opacity: 1 }
+            ).fromTo(about, 0.3, { x: "200%", opacity: 0 }, { x: "0%", opacity: 1 });
+        }
+
+        if (destination.index === 2) {
+            const check = document.querySelector(".check--animate");
+            const t_check = document.querySelector(".title--check");
+            tl.fromTo(
+                t_check,
+                0.3, { y: "50", opacity: 0 }, { y: 0, opacity: 1 }
+            ).fromTo(check, 0.3, { x: "-200%", opacity: 0 }, { x: "0%", opacity: 1 });
+        }
+
+        if (destination.index === 3) {
+            const register = document.querySelector(".register--content");
+            const register__t = document.querySelector(".register--title");
+            tl.fromTo(
+                register__t,
+                0.3, { y: "50", opacity: 0 }, { y: 0, opacity: 1 }
+            ).fromTo(
+                register,
+                0.3, { x: "100%", opacity: 0 }, { x: "0%", opacity: 1 }
+            );
+        }
+        if (destination.index === 3) {
+            const footer_c = document.querySelectorAll(".footer-col");
+            tl.fromTo(footer_c[0], 0.3, { y: "50", opacity: 0 }, { y: 0, opacity: 1 })
+                .fromTo(footer_c[1], 0.3, { y: "50", opacity: 0 }, { y: 0, opacity: 1 })
+                .fromTo(
+                    footer_c[2],
+                    0.3, { y: "50", opacity: 0 }, { y: 0, opacity: 1 }
+                );
+        }
+    }
 });
 
 //Hamburger Toggle
@@ -26,6 +69,17 @@ hamburger.addEventListener("click", () => {
     wrapper.classList.toggle("is-active");
     document.querySelector("#fp-nav").classList.toggle("is-active");
     document.querySelector(".hero").classList.toggle("is-froze");
+});
+
+//Dropdown
+
+const dropdown = document.querySelector(".dropdown");
+const arrow = document.querySelector(".arrow");
+const dropdown__list = document.querySelector(".dropdown--list");
+
+dropdown.addEventListener("click", () => {
+    arrow.classList.toggle("arrow--clicked");
+    dropdown__list.classList.toggle("dropdown--clicked");
 });
 
 //Nav Style on Scroll
@@ -54,7 +108,7 @@ const sectionOneObserver = new IntersectionObserver(function(
 sectionOneObserver.observe(sectionOne);
 
 //MouseOver Slider
-
+/*
 document.addEventListener("DOMContentLoaded", function() {
     let mouseover = document.querySelector(".mouseover");
     let topLayer = wrapper.querySelector(".top");
@@ -72,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
         topLayer.style.width = e.clientX + skew + "px";
     });
 });
-
+ */
 //Dark Mode
 
 let darkMode = localStorage.getItem("darkMode");
@@ -112,44 +166,6 @@ darkModeToggle.addEventListener("click", () => {
         theme.textContent = "Dark Theme: Off";
     }
 });
-
-//Smooth Scroll
-
-/*function smoothScroll(target_element, duration) {
-    let target = document.querySelector(target_element);
-    let targetPosition = target.offsetTop;
-    console.log(targetPosition);
-    let startPosition = window.pageYOffset;
-    let distance = targetPosition - startPosition;
-    let startTime = null;
-
-    function animation(currentTime) {
-        if (startTime === null) startTime = currentTime;
-        let timeElasped = currentTime - startTime;
-        let run = ease(timeElasped, startPosition, distance, duration);
-        window.scrollTo(0, run);
-
-        if (timeElasped < duration) {
-            window.requestAnimationFrame(animation);
-        }
-    }
-
-    function ease(t, b, c, d) {
-        t /= d / 2;
-        if (t < 1) return (c / 2) * t * t + b;
-        t--;
-        return (-c / 2) * (t * (t - 2) - 1) + b;
-    }
-    console.log(`${targetPosition} ${distance}`);
-    window.requestAnimationFrame(animation);
-}
-
-const shit = document.querySelector('.shit');
-console.log(shit);
-shit.addEventListener('click', () => {
-    smoothScroll('.footer', 1000);
-    console.log('clicked');
-}); */
 
 //Cursor
 const cursor = document.querySelector(".cursor");

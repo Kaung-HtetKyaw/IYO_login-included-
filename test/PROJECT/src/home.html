@@ -8,10 +8,11 @@
     <link href="https://fonts.googleapis.com/css?family=Oleo+Script|Poppins|Source+Serif+Pro&display=swap" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../css/pages/home.css" />
     <link rel="stylesheet" type="text/css" href="../css/fullpage.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-    <title>Document</title>
+    <title>Inspiratinal Youth Organization</title>
 </head>
 
 <body>
@@ -28,12 +29,23 @@
             <a href="#" class="nav-link">
                 <li class="nav-item nav-active">Home</li>
             </a>
-            <a href="#" class="nav-link">
+            <a href="post__edit.html" class="nav-link">
                 <li class="nav-item">Posts</li>
             </a>
-            <a href="#" class="nav-link">
-                <li class="nav-item shit">Login</li>
-            </a>
+            <li class="nav-item dropdown">
+                Register <img src="../img/Arrow.png" alt="dropdown" class="arrow" />
+                <ul class="dropdown--list">
+                    <a href="../src/login.html">
+                        <li>Sign in</li>
+                    </a>
+                    <a href="../src/signup.html">
+                        <li>Sign up</li>
+                    </a>
+                    <a href="">
+                        <li>Log out</li>
+                    </a>
+                </ul>
+            </li>
 
             <a href="#" class="nav-link ">
                 <li class="nav-item darkmode">
@@ -120,11 +132,11 @@
                     <div class="row about__body">
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-7 col-xl-7 about__image"></div>
                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 about__content">
-                            <div class="about__heading">
+                            <div class="about__heading title--about">
                                 <h5 class="about__heading--secondary">a little about us</h5>
                                 <h1 class="about__heading--primary">Who We Are</h1>
                             </div>
-                            <div class="about__para">
+                            <div class="about__para about--animate">
                                 <p>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nesciunt minus modi tempora facere eos id pariatur maiores, architecto neque officia fugit sed sunt dignissimos ab earum quidem quis iure! Lorem ipsum dolor sit amet consectetur adipisicing
                                     elit. Corrupti id pariatur maiores, architecto neque officia fugit sed sunt dignissimos ab earum quidem quis iure!
@@ -134,37 +146,81 @@
                     </div>
                 </div>
             </div>
-            <div class="section teams">
-                <div class="container--fluid mouseover ">
-                    <div class="welcome">
-                        <h5 class="welcome__text">welcome</h5>
-                    </div>
+            <div class="section check">
+                <div class="container--fluid check__wrapper">
+                    <div class="row check__body">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 check__content">
+                            <div class="check__heading t-center title--check">
+                                <h5 class="check__heading--secondary">check out</h5>
+                                <h1 class="check__heading--primary">Our Events</h1>
+                            </div>
+                            <div class="check__para check--animate">
+                                <p class="m-b-sm ">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nesciunt minus modi tempora facere eos id pariatur maiores, architecto neque officia fugit sed sunt dignissimos ab earum quidem quis iure!
+                                </p>
+                                <a href="#" class="check__btn">See Events <span>&#62;</span></a
+                  >
+                </div>
+              </div>
+              <div
+                class="col-xs-12 col-sm-12 col-md-6 col-lg-7 col-xl-7 check__image"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="section footer">
+          <div class="register">
+            <div class="container--fluid">
+              <div class="row">
+                <div class=" register-col  t-center d-flex flex-c j-c-c a-i-c">
+                  <h3 class="register--title">Keep In Touch With Us</h3>
 
-                    <div class="quote t-left">
-                        <h1 class="inspirational">
-                            <span class="cap">I</span>nspirational
-                        </h1>
-                        <h1 class="youth"><span class="cap">Y</span>outh</h1>
-                        <h1 class="organization">
-                            <span class="cap">O</span>rginization
-                        </h1>
-                    </div>
-
-                    <div class="layer top">
-                        <div class="content-wrap">
-                            <div class=" content-body"></div>
+                  <div class="register--content">
+                    <p class="register--para">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Autem, consequuntur?
+                    </p>
+                    <a href="#" class="check__btn register--btn "
+                      >Register Here
+                    </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="layer bottom">
-                        <div class="content-wrap">
-                            <div class=" content-body"></div>
-                        </div>
-                    </div>
-
-                    <div class="handle"></div>
                 </div>
             </div>
-            <div class="section footer "></div>
+            <div class="footer--container t-center">
+                <div class="container--fluid">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 footer-col">
+                            <h3 class="footer--logo">
+                                <span>I</span>nspirational <br />
+                                <span>Y</span>outh <br />
+                                <span>O</span>rganization
+                            </h3>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 footer-col address">
+                            <p>Mandalay Technological University</p>
+                            <p>Patheingyi Township</p>
+                            <p>Mandalay</p>
+                            <p>Myanmar</p>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 footer-col contact">
+                            <a href="mailto:contactus@mtu.edu.mm" class="contact-link">contactus@mtu.edu.mm</a
+                  >
+                  <div class="social">
+                    <a href="#" class="social-icon facebook"
+                      ><i class="fab fa-facebook-f fa-2x"></i>
+                    </a>
+                            <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in fa-2x"></i>
+                    </a>
+                            <a href="#" class="social-icon instagram"><i class="fab fa-instagram fa-2x "></i
+                    ></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
         </div>
     </main>
     <div class="cursor "></div>
@@ -172,10 +228,11 @@
     <script src="../js/home.js "></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js "></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js "></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
     <script>
         var sickPrimary = {
             autoplay: true,

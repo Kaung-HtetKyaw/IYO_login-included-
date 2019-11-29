@@ -1,0 +1,81 @@
+.card-container {
+    padding: 2rem;
+}
+
+.image {
+    position: relative;
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    transition: all ease-out 300ms;
+}
+
+.image-text p {
+    color: var(--team-title);
+    font-size: 1.8rem !important;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 2rem auto;
+}
+
+.gallery-image {
+    padding: 0 auto;
+    transition: all ease-out 300ms;
+}
+
+.image:hover {
+    border: 2px solid var(--nav-tx);
+}
+
+.image:hover .gallery-image {
+    opacity: 0;
+    transform: scale(0.9, 0.9);
+}
+
+.image:hover .image-text {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.zoom-in {
+    transition: transform ease-out 250ms;
+}
+
+.image-text:hover .zoom-in {
+    transform: scale(1.5, 1.5);
+}
+
+.card-container {
+    margin: 1rem auto;
+}
+
+.social-icon {
+    padding: 0 1rem;
+}
+
+.facebook {
+    transition: all ease-out 250ms;
+}
+
+.facebook:hover {
+    color: #3b5998;
+}
+
+.twitter {
+    transition: all ease-out 250ms;
+}
+
+.twitter:hover {
+    color: #00aced;
+}
+
+.instagram:hover {
+    color: #bc2a8d;
+    transition: all 0.5s ease;
+}

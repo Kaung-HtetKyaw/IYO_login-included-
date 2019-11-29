@@ -10,18 +10,20 @@
 }
 
 .posts {
+    transform: scale(0);
+    opacity: 0;
     position: relative;
     width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-right: 5rem;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.5s ease-in-out;
     @include mq-sm {
         padding: 1rem;
     }
     margin: 3rem auto;
-    &:nth-child(even) {
+    &:nth-child(odd) {
         background-color: var(--post--even) !important;
     }
 }
@@ -52,10 +54,6 @@
 }
 
 .post--img {
-    background: url(../../img/hero3.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     min-height: 100px;
 }
 
@@ -79,4 +77,9 @@
 .post__speaker {
     color: var(--post--heading);
     font-weight: 500;
+}
+
+.post--scrolled {
+    transform: scale(1);
+    opacity: 1;
 }

@@ -6,11 +6,13 @@
 @import "../base/utilities";
 @import "../base/base";
 @import "../components/navigation";
-@import "../components/mouseover_slider";
 @import "../components/preload";
 @import "../components/toggler";
 @import "../components/cursor";
 @import "../components/content-slider";
+@import "../components/dropdown";
+@import "../components/btn-animate";
+@import "../components/footer";
 //#011f4b • #03396c • #005b96 • #6497b1 • #b3cde0
 body {
     --header: transparent;
@@ -24,27 +26,36 @@ body {
 
 .light {
     --about-bg: #fafafa;
+    --leader-bg: #fff;
+    --leader-tx: #121212;
     --nav-bg: #eee;
     --nav-tx: #121212;
     --h-bg: #eee;
     --h-tx: #333;
     --tooltips: #000;
+    --footer-bg: #f0f0f0;
+    --footer-container: #fff;
+    --register-bg: #212121;
 }
 
 .dark {
     --about-bg: #121212;
+    --leader-bg: #121212;
+    --leader-tx: #eee;
     --nav-bg: #242424;
-    --nav-tx: #fff;
+    --nav-tx: #eee;
     --h-bg: #242424;
     --h-tx: #eee;
     --tooltips: #eee;
+    --footer-bg: #121212;
+    --footer-container: #212121;
+    --register-bg: linear-gradient(#b3cde0, white);
 }
 
 //#011f4b • #03396c • #005b96 • #6497b1 • #b3cde0
 .hero {
     width: 100%;
     height: 100vh;
-    background: #6497b1;
 }
 
 .about {
@@ -78,7 +89,6 @@ body {
         line-height: 1.8;
         margin-left: -50px;
         color: var(--nav-tx);
-        transition: all 0.1s ease-in-out;
         @include mq-md {
             text-align: center;
             margin-left: 0;
@@ -108,17 +118,85 @@ body {
     }
 }
 
-.teams {
+.check {
     width: 100%;
-    background-color: dodgerblue;
-}
-
-.footer {
-    width: 100%;
-}
-
-.is-froze {
-    pointer-events: none;
+    background-color: var(--about-bg);
+    transition: all 0.3s ease-in-out;
+    &__wrapper {
+        width: 100%;
+        height: 100%;
+        padding-top: 6rem;
+    }
+    &__body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__image {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../img/hero7.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        @include mq-md {
+            height: 50%;
+        }
+    }
+    &__content {
+        z-index: 10;
+        line-height: 1.8;
+        margin-right: -100px;
+        color: var(--leader-tx);
+        transition: all 0.1s ease-in-out;
+        @include mq-md {
+            text-align: center;
+            margin-right: 0;
+        }
+    }
+    &__heading {
+        &--secondary {
+            margin: 0 auto;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #6497b1, white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        &--primary {
+            margin: 0;
+            font-family: $serif;
+            font-size: 5rem;
+        }
+    }
+    &__para {
+        padding: 5rem;
+        background-color: var(--about-bg);
+        transition: all 0.5s ease-in-out;
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+    }
+    &__btn {
+        position: relative;
+        background-color: var(--nav-tx);
+        color: var(--nav-bg);
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
+        margin-top: 2rem;
+        border-radius: 100px;
+        transition: all 0.3s ease-in-out;
+        span {
+            font-weight: bold;
+            margin-left: 1.5rem;
+        }
+        &:hover {
+            background-color: #b3cde0;
+            color: white;
+        }
+    }
 }
 
 //NavTooltips active
