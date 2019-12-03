@@ -12,12 +12,21 @@ new fullpage("#wrapper", {
     autoscrolling: true,
     navigation: true,
     scrollingSpeed: 1000,
-    navigationTooltips: ["Welcome", "About Us", "Our Teams", "Contact Us"],
+    navigationTooltips: ["Welcome", "About Us", "Our Events", "Contact Us"],
     showActiveTooltip: false,
     onLeave: (origin, destination, direction) => {
         const section = destination.item;
 
         const tl = new TimelineMax({ delay: 0.5 });
+
+        if (destination.index === 0) {
+            const text_slider = document.querySelector(".text-slider-wrapper");
+
+            tl.fromTo(
+                text_slider,
+                0.7, { y: "50", opacity: 0 }, { y: 0, opacity: 1 }
+            );
+        }
 
         if (destination.index === 1) {
             const about = document.querySelector(".about--animate");
@@ -73,14 +82,26 @@ hamburger.addEventListener("click", () => {
 
 //Dropdown
 
-const dropdown = document.querySelector(".dropdown");
-const arrow = document.querySelector(".arrow");
-const dropdown__list = document.querySelector(".dropdown--list");
-
-dropdown.addEventListener("click", () => {
-    arrow.classList.toggle("arrow--clicked");
-    dropdown__list.classList.toggle("dropdown--clicked");
-});
+const dropdown = document.querySelectorAll(".dropdown");
+const dropdown__list = document.querySelectorAll(".dropdown--list");
+const dropdown__list_arr = Array.from(dropdown__list);
+const arrow = document.querySelectorAll(".arrow");
+const arrow_arr = Array.from(arrow);
+const dropdown_arr = Array.from(dropdown);
+for (let i = 0; i < dropdown_arr.length; i++) {
+    dropdown_arr[i].addEventListener("click", () => {
+        console.log("clicked");
+        arrow[i].classList.toggle("arrow--clicked");
+        dropdown__list[i].classList.toggle("dropdown--clicked");
+    });
+}
+//dropdown.forEach(el => {
+//   el.addEventListener("click", () => {
+//     const dropdown__list = document.querySelector(".dropdown--list");
+//      arrow.classList.toggle("arrow--clicked");
+//     dropdown__list.classList.toggle(`${el}dropdown--clicked`);
+//  });
+//});
 
 //Nav Style on Scroll
 
@@ -107,26 +128,6 @@ const sectionOneObserver = new IntersectionObserver(function(
 
 sectionOneObserver.observe(sectionOne);
 
-//MouseOver Slider
-/*
-document.addEventListener("DOMContentLoaded", function() {
-    let mouseover = document.querySelector(".mouseover");
-    let topLayer = wrapper.querySelector(".top");
-    let handle = wrapper.querySelector(".handle");
-    let skew = 0;
-    let delta = 0;
-
-    if (wrapper.className.indexOf("skewed") != -1) {
-        skew = 1000;
-    }
-
-    mouseover.addEventListener("mousemove", function(e) {
-        handle.style.left = e.clientX + "px";
-
-        topLayer.style.width = e.clientX + skew + "px";
-    });
-});
- */
 //Dark Mode
 
 let darkMode = localStorage.getItem("darkMode");
@@ -160,10 +161,8 @@ darkModeToggle.addEventListener("click", () => {
 
     if (darkMode != "enabled") {
         enableDarkMode();
-        theme.textContent = "Dark Theme: On";
     } else {
         disableDarkMode();
-        theme.textContent = "Dark Theme: Off";
     }
 });
 
