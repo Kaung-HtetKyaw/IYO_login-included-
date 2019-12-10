@@ -15,6 +15,9 @@ html {
     @include mq-sm {
         font-size: 7px;
     }
+    @include mq-xs {
+        font-size: 5px;
+    }
 }
 
 body {
