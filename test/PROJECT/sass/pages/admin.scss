@@ -22,7 +22,8 @@ body {
     font-family: $sans-serif;
     font-size: 2rem;
     position: relative;
-    transition: all 0.5s ease-in-out;
+
+    @include transition(al 0.5s ease-in-out);
     header {
         background-color: var(--nav-bg);
         .logo {
@@ -75,7 +76,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    transition: all 0.3s ease-in-out;
+    @include transition( all 0.3s ease-in-out);
     .heading_post {
         position: relative;
         margin: 5rem 0 8rem 0;
@@ -92,7 +93,9 @@ body {
             height: 3px;
             background-color: var(--form--border);
             transform: scaleX(0.5);
-            transform-origin: left;
+            -webkit-transform-origin: left;
+            -moz-transform-origin: left;
+            -o-transform-origin: left;
         }
     }
 }

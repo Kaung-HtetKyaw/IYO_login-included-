@@ -1,0 +1,130 @@
+.table-wrap {
+    max-width: 100rem;
+    padding: 0 1.5rem;
+    margin: 3rem auto;
+    padding:10rem 0;
+  
+    &:not(:first-child){
+        padding:1rem 0 10rem 0;
+    }
+    &:last-child{
+        margin-bottom: 0;
+    }
+    
+   }
+   .table_title{
+       font-family: $serif;
+       margin: 3rem 0;
+       color: var(--nav-tx);
+      @include transition(all 0.3s ease-in-out);
+   
+   }
+
+   
+   .responsiveTbl table {
+    text-align: center;
+    width: 100%;
+   
+   }
+   
+   tr {
+       font-size: 1.5rem;
+    background: #fff;
+    @include transition(all 0.3s ease-in-out);
+
+    &:nth-child(1n) {
+       background-color: var(--post--body);
+       color: var(--nav-tx);
+    }
+    &:nth-child(2n) {
+       background-color: var(--post--even);
+       color: var(--nav-tx);
+    }
+   
+    &:hover {
+     .msg {
+      opacity: 1;
+      top: 0;
+     }
+    }
+   }
+   
+   th{
+       font-size: 1.7rem;
+   }
+   th,
+   td {
+    padding: 1.5rem 2rem;
+    vertical-align: middle;
+    &:nth-child(2) {
+     text-align: left;
+     
+    }
+   }
+   
+   th {
+    background: #63a4ff;
+    color: #fff;
+    font-weight: 500;
+    -webkit-text-transform: uppercase;
+    padding: 2.5rem 2rem;
+   }
+   
+   .price,
+   .btn {
+    border: 1px solid darkcyan;
+    border-radius: 2.5rem;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.8rem;
+    min-width: 10rem;
+    text-align: center;
+   }
+   
+   .btn {
+   
+    border: none;
+    color: #fff;
+    @include transition(all 0.3s ease-in-out);
+   
+    i{
+   
+      display: none;
+   }
+   &__text{
+      
+       display: inline-block;
+       transition: all 0.3s ease-in-out;
+   }
+   
+    &:hover .btn__text
+    {
+       margin-right: 1rem;
+    }
+    &:hover i{
+       display: inline-block;
+    }
+   }
+   
+   .send{
+       background-color: var(--send);
+       i{
+        
+           @include transform(rotate(45deg))
+       }
+       &:hover {
+           background-color: lighten($color: darkcyan, $amount: 5%);
+            color: #fff;
+            
+           }
+   }
+   .remove{
+       background-color: var(--remove);
+       &:hover {
+           background-color: lighten($color: #a8121f, $amount: 5%);
+            color: #fff;
+            
+           }
+   }
+
+   

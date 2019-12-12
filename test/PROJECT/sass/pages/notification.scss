@@ -1,0 +1,69 @@
+
+@import "../abstract/variables";
+@import "../abstract/mixins";
+@import "../base/normalize";
+@import "../layout/responsive";
+@import "../base/utilities";
+@import "../base/base";
+@import "../components/navigation";
+@import "../components/toggler";
+@import "../components/cursor";
+@import "../components/posts";
+@import "../components/preload";
+@import "../components/dropdown";
+@import "../components/noti-table";
+
+body {
+    --header: transparent;
+    --header-tx-c: white;
+    --header-bg-c: transparent;
+    --send:darkcyan;
+    --remove:#a8121f;
+    font-family: $sans-serif;
+    font-size: 2rem;
+    position: relative;
+    @include transition(all 0.5s ease-in-out);
+    overflow-x: hidden;
+   background-color: #fff;
+    header {
+        background-color: var(--nav-bg);
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+        @include transition(all 0.3s ease-in-out);
+        .logo {
+            color: var(--nav-tx);
+        }
+        .hamburger {
+            .bars,
+            .bars::before,
+            .bars::after {
+                background-color: var(--nav-tx);
+            }
+        }
+    }
+}
+
+.light {
+    --about-bg: #ddd;
+    --nav-bg: #fafafa;
+    --nav-tx: #121212;
+    --post: #fff;
+    --post--heading: #121212;
+    --post--body: #fafafa;
+    --post--even: #eee;
+}
+
+.dark {
+    --about-bg: #121212;
+    --nav-bg: #242424;
+    --nav-tx: #fff;
+    --post: #282828;
+    --post--heading: #fff;
+    --post--body: #222;
+    --post--even: #333;
+}
+.main{
+    background-color: var(--about-bg);
+    max-height: 100%;
+    
+    
+}

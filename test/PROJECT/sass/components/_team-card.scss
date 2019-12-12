@@ -10,9 +10,9 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 0);
+    @include transform(translate(-50%, 0));
     opacity: 0;
-    transition: all ease-out 300ms;
+    @include transition( all 0.3s ease-in-out);
 }
 
 .image-text p {
@@ -26,7 +26,7 @@
 
 .gallery-image {
     padding: 0 auto;
-    transition: all ease-out 300ms;
+    @include transition( all 0.3s ease-in-out);
 }
 
 .image:hover {
@@ -35,20 +35,20 @@
 
 .image:hover .gallery-image {
     opacity: 0;
-    transform: scale(0.9, 0.9);
+     @include transform( scale(0.9, 0.9));
 }
 
 .image:hover .image-text {
     opacity: 1;
-    transform: translate(-50%, -50%);
+    @include transform(translate(-50%, -50%));
 }
 
 .zoom-in {
-    transition: transform ease-out 250ms;
+    @include transition( all 0.25s ease-in-out);
 }
 
 .image-text:hover .zoom-in {
-    transform: scale(1.5, 1.5);
+    @include transform(scale(1.5, 1.5));
 }
 
 .card-container {
@@ -60,7 +60,7 @@
 }
 
 .facebook {
-    transition: all ease-out 250ms;
+    @include transition( all 0.25s ease-in-out);
 }
 
 .facebook:hover {
@@ -68,7 +68,7 @@
 }
 
 .twitter {
-    transition: all ease-out 250ms;
+    @include transition( all 0.25s ease-in-out);
 }
 
 .twitter:hover {
@@ -77,5 +77,5 @@
 
 .instagram:hover {
     color: #bc2a8d;
-    transition: all 0.5s ease;
+    @include transition( all 0.5s ease-in-out);
 }

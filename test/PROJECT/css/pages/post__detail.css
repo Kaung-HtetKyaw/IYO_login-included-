@@ -893,20 +893,18 @@ template {
   max-width: 100%;
 }
 
-.d-flex {
+.d-flex-c {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.flex-c {
+.flex-col {
   flex-direction: column;
 }
 
-.j-c-c {
-  justify-content: center;
-}
-
-.a-i-c {
-  align-items: center;
+.flex-row {
+  flex-direction: row;
 }
 
 *,
@@ -939,6 +937,8 @@ html {
 
 body {
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -957,7 +957,7 @@ ul {
 p,
 ul,
 li {
-  font-family: "Poppins", sans-serif;
+  font-family: sans-serif;
   font-size: 1.6rem;
 }
 
@@ -1206,6 +1206,9 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 2rem;
   position: relative;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 body header {
