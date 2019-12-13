@@ -1,14 +1,17 @@
 .footer {
     width: 100%;
     background-color: var(--footer-bg);
-    padding: 60px 0;
+    padding-top:  6rem ;
+ @include mq-sm{
+     padding-top:2rem;
+ }
     &--container {
         width: 100%;
         height: 50vh;
-        padding: 3rem;
+        padding: 1rem;
         background-color: var(--footer-container);
         @include mq-sm {
-            padding: 1rem;
+            padding: 0rem;
             height: 65vh;
         }
     }
@@ -16,13 +19,21 @@
         position: relative;
         width: 100%;
         color: var(--nav-tx);
-        padding: 3rem;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         @include mq-sm {
-            padding: 1rem;
+            padding: 0rem;
         }
+        @include mq-md{
+            padding:0rem;
+        }
+   
     }
     .address {
-        padding: 3rem;
+        padding: 1rem;
         p {
             margin-bottom: 2rem;
             @include mq-sm {
@@ -44,7 +55,7 @@
                 margin: 1rem;
             }
             &-icon {
-                padding: 0 2rem;
+                padding: 0 1rem;
                 transition: all 0.3s ease-in-out;
             }
         }
@@ -83,11 +94,17 @@
         background: var(--register-bg);
         -webkit-background-clip: text;
         color: transparent;
+        @include mq-sm{
+            font-size: 2.5rem;
+        }
     }
     &--para {
-        margin: 5rem 0;
+        padding: 5rem 0;
         font-family: $sans-serif;
         font-size: 1.8rem;
+        @include mq-sm{
+            padding:3rem 0;
+        }
     }
     &--btn {
         font-family: $script;
@@ -108,6 +125,7 @@
         border-right: 1px solid var(--about-bg);
         @include mq-sm {
             height: 35vh;
+            padding:2rem 3rem;
         }
     }
 }

@@ -361,6 +361,7 @@ iframe {
     -o-transition: all 0.4s;
     -moz-transition: all 0.4s;
     transition: all 0.4s;
+  
 }
 
 .input:focus+.focus-input100+.symbol-input100 {
@@ -368,6 +369,27 @@ iframe {
     padding-left: 28px;
 }
 
+.show-pwd{
+    display: inline-block;
+    font-size: 1.8rem;
+    margin:1rem 0;
+    cursor: pointer;
+    position: absolute;
+    right:5%;
+    top:10%;
+    color: #666666;
+    h5{
+        display: inline-block;
+        margin-right:1rem;
+        background-image: linear-gradient(  to right,#63a4ff,#83eaf1);
+        -webkit-background-clip: text;
+        color: transparent;
+       
+    }
+    i{
+      
+    }
+}
 
 /*------------------------------------------------------------------
 [ Button ]*/

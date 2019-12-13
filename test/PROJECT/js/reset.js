@@ -35,3 +35,31 @@ document.addEventListener("load", () => {
         theme.textContent = "Dark Theme: Off";
     }
 });
+
+//Show and Hide password
+
+const btn__eye=document.querySelectorAll(".eye-icon");
+let eye_arr=Array.from(btn__eye);
+const input=document.querySelectorAll("#pwd");
+let input_arr=Array.from(input);
+
+
+for(let i=0;i<eye_arr.length;i++){
+    let btn=eye_arr[i];
+    let pwd=input_arr[i];
+    showhide(btn,pwd);
+
+    function showhide(btn,pwd){
+       btn.addEventListener("click",()=>{
+            if(pwd.type=="password"){
+                pwd.type="text";
+                btn.classList.add("fa-eye-slash");
+            }
+            else{
+                pwd.type="password";
+                btn.classList.remove("fa-eye-slash");
+            }
+       })
+    }
+}
+
