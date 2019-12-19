@@ -12,7 +12,9 @@ new fullpage("#wrapper", {
     autoscrolling: true,
     navigation: true,
     scrollingSpeed: 1000,
-    navigationTooltips: ["Welcome", "About Us", "Our Events", "Contact Us"],
+   scrollBar:false,
+    navigationTooltips: ["Welcome", "About Us", "Our Events", "Contact Us","Dev Team"],
+    
     showActiveTooltip: false,
     onLeave: (origin, destination, direction) => {
         const section = destination.item;
@@ -31,7 +33,11 @@ new fullpage("#wrapper", {
         if (destination.index === 1) {
             const about = document.querySelector(".about--animate");
             const t_about = document.querySelector(".title--about");
-            tl.fromTo(
+            const img=document.querySelector(".about__image");
+            tl
+            .fromTo(img,0.5,{x:"-150%"},{x:"0%"})
+            
+            .fromTo(
                 t_about,
                 0.3, { y: "50", opacity: 0 }, { y: 0, opacity: 1 }
             ).fromTo(about, 0.3, { x: "200%", opacity: 0 }, { x: "0%", opacity: 1 });
@@ -40,10 +46,13 @@ new fullpage("#wrapper", {
         if (destination.index === 2) {
             const check = document.querySelector(".check--animate");
             const t_check = document.querySelector(".title--check");
-            tl.fromTo(
+            const img=document.querySelector(".check__image");
+            tl
+            .fromTo(img,0.5,{x:"150%"},{x:"0%"}).fromTo(
                 t_check,
                 0.3, { y: "50", opacity: 0 }, { y: 0, opacity: 1 }
-            ).fromTo(check, 0.3, { x: "-200%", opacity: 0 }, { x: "0%", opacity: 1 });
+            ).fromTo(check, 0.3, { x: "-100%", opacity: 0 }, { x: "0%", opacity: 1 })
+            ;
         }
 
         if (destination.index === 3) {

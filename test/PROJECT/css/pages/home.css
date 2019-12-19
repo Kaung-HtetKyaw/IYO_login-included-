@@ -1792,6 +1792,34 @@ header .hamburger .bars::after {
   }
 }
 
+.dev {
+  position: relative;
+  font-size: 1.4rem;
+  color: var(--copy);
+  background-color: var(--footer-container);
+}
+.dev__info {
+  padding: 2rem 0;
+}
+.dev__info--link {
+  color: darkcyan;
+}
+.dev__info .fa-heart {
+  color: #a83f39;
+}
+.dev::before {
+  opacity: 0.5;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  top: 0;
+  left: 0;
+  background-color: var(--copy);
+  transform: scaleX(0.8);
+  transform-origin: center;
+}
+
 body {
   --header: transparent;
   --header-tx-c: white;
@@ -1803,6 +1831,10 @@ body {
   -ms-transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .light {
@@ -1817,6 +1849,7 @@ body {
   --footer-bg: #f0f0f0;
   --footer-container: #fff;
   --register-bg: #212121;
+  --copy:#212121;
 }
 
 .dark {
@@ -1831,6 +1864,7 @@ body {
   --footer-bg: #121212;
   --footer-container: #212121;
   --register-bg: linear-gradient(#b3cde0, white);
+  --copy:#838383;
 }
 
 .hero {

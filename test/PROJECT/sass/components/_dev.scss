@@ -1,0 +1,28 @@
+.dev{
+    position: relative;
+     font-size: 1.4rem;
+     color: var(--copy);
+     background-color: var(--footer-container);
+     &__info{
+ 
+         padding:2rem 0;
+         &--link{
+             color:darkcyan;
+         }
+         .fa-heart{
+             color:#a83f39;
+         }
+     }
+     &::before{
+         opacity: 0.5;
+         position: absolute;
+         content:"";
+         width:100%;
+         height:1px;
+         top:0;
+         left:0;
+         background-color: var(--copy);
+         transform: scaleX(0.8);
+         transform-origin: center;
+     }
+ }

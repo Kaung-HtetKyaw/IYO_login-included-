@@ -1535,6 +1535,34 @@ header .hamburger .bars::after {
   display: block;
 }
 
+.dev {
+  position: relative;
+  font-size: 1.4rem;
+  color: var(--copy);
+  background-color: var(--footer-container);
+}
+.dev__info {
+  padding: 2rem 0;
+}
+.dev__info--link {
+  color: darkcyan;
+}
+.dev__info .fa-heart {
+  color: #a83f39;
+}
+.dev::before {
+  opacity: 0.5;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  top: 0;
+  left: 0;
+  background-color: var(--copy);
+  transform: scaleX(0.8);
+  transform-origin: center;
+}
+
 body {
   --header: transparent;
   --header-tx-c: white;
@@ -1542,6 +1570,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 2rem;
   position: relative;
+  overflow-x: hidden;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
@@ -1581,6 +1610,7 @@ body header .hamburger .bars::after {
   --post--even: #eee;
   --team-title: #121212;
   --btn-view: #333;
+  --copy:#212121;
 }
 
 .dark {
@@ -1600,6 +1630,7 @@ body header .hamburger .bars::after {
   --post--even: #333;
   --team-title: #b3cde0;
   --btn-view: #b3cde0;
+  --copy:#838383;
 }
 
 .main {
@@ -1649,6 +1680,10 @@ body header .hamburger .bars::after {
   -moz-transform-origin: left;
   -o-transform-origin: left;
   transform-origin: left;
+}
+
+.dev {
+  background-color: var(--about-bg);
 }
 
 /*# sourceMappingURL=team.css.map */

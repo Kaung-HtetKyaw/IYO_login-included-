@@ -1373,6 +1373,34 @@ header .hamburger .bars::after {
   display: block;
 }
 
+.dev {
+  position: relative;
+  font-size: 1.4rem;
+  color: var(--copy);
+  background-color: var(--footer-container);
+}
+.dev__info {
+  padding: 2rem 0;
+}
+.dev__info--link {
+  color: darkcyan;
+}
+.dev__info .fa-heart {
+  color: #a83f39;
+}
+.dev::before {
+  opacity: 0.5;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  top: 0;
+  left: 0;
+  background-color: var(--copy);
+  transform: scaleX(0.8);
+  transform-origin: center;
+}
+
 body {
   --header: transparent;
   --header-tx-c: white;
@@ -1418,6 +1446,7 @@ body header .hamburger .bars::after {
   --post--body: #fafafa;
   --post--content: #808080;
   --post--even: #eee;
+  --copy:#212121;
 }
 
 .dark {
@@ -1435,6 +1464,7 @@ body header .hamburger .bars::after {
   --post--body: #222;
   --post--content: #eee;
   --post--even: #333;
+  --copy:#838383;
 }
 
 .heading {
@@ -1457,6 +1487,10 @@ body header .hamburger .bars::after {
   -webkit-transform: scaleX(0.5);
   transform: scaleX(0.5);
   background-color: var(--post--heading);
+}
+
+.dev {
+  background-color: var(--post);
 }
 
 /*# sourceMappingURL=post__edit.css.map */

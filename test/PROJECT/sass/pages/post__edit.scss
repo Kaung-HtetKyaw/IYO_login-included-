@@ -10,6 +10,7 @@
 @import "../components/posts";
 @import "../components/preload";
 @import "../components/dropdown";
+@import "../components/dev";
 //#011f4b • #03396c • #005b96 • #6497b1 • #b3cde0
 body {
     --header: transparent;
@@ -52,6 +53,7 @@ body {
     --post--body: #fafafa;
     --post--content: #808080;
     --post--even: #eee;
+    --copy:#212121;
 }
 
 .dark {
@@ -69,6 +71,7 @@ body {
     --post--body: #222;
     --post--content: #eee;
     --post--even: #333;
+    --copy:#838383;
 }
 
 .heading {
@@ -88,4 +91,7 @@ body {
         @include transform(scaleX(0.5));
         background-color: var(--post--heading);
     }
+}
+.dev{
+    background-color: var(--post);
 }

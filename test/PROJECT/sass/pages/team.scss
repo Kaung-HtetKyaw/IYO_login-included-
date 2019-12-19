@@ -12,6 +12,7 @@
 @import "../components/btn-animate";
 @import "../components/preload";
 @import "../components/dropdown";
+@import "../components/dev";
 //#011f4b • #03396c • #005b96 • #6497b1 • #b3cde0
 body {
     --header: transparent;
@@ -20,6 +21,7 @@ body {
     font-family: $sans-serif;
     font-size: 2rem;
     position: relative;
+    overflow-x: hidden;
     @include transition(all 0.5s ease-in-out);
     header {
         background-color: var(--nav-bg);
@@ -55,6 +57,9 @@ body {
     --post--even: #eee;
     --team-title: #121212;
     --btn-view: #333;
+    --copy:#212121;
+
+
 }
 
 .dark {
@@ -74,6 +79,7 @@ body {
     --post--even: #333;
     --team-title: #b3cde0;
     --btn-view: #b3cde0;
+    --copy:#838383;
 }
 
 .main {
@@ -114,4 +120,8 @@ body {
             transform-origin: left;
         }
     }
+}
+
+.dev{
+    background-color: var(--about-bg);
 }
