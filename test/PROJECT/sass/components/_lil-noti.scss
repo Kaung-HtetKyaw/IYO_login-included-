@@ -1,0 +1,19 @@
+.noti {
+  text-align: center;
+  min-width: 200px;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -200%);
+  transition: all 0.3s ease-in-out;
+  color: #eee;
+  background-color: #63a4ff;
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.noti--get {
+  transform: translate(-50%, 0%);
+  transition: all 0.3s ease-in-out;
+}
